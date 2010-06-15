@@ -13,3 +13,7 @@ namespace :test do
   end  
   
 end
+
+task :gem do
+  sh 'gem build chart-topper.gemspec'
+end
