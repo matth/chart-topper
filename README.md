@@ -26,9 +26,13 @@ View your graph at [http://localhost/a\_graph\_of\_various\_fruit.png](http://lo
 
 ## Installation
 
+To install Chart Topper
+
+	sudo gem install chart-topper
+
 Chart Topper is built around [Gruff](http://nubyonrails.com/pages/gruff) which is in turn built around [ImageMagick and RMagick](http://rmagick.rubyforge.org/install-osx.html). 
 
-The quickest way to get all the ImageMagick dependancy installed is to use MacPorts (OS X).
+The quickest way to get the ImageMagick dependancy installed is to use MacPorts (OS X).
 
     sudo port install imagemagick
     
