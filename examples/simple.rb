@@ -52,7 +52,7 @@ end
 # BAR CHART /a_simple_bar_chart.png
 bar "A simple bar chart" do
 
-  size "400x225"
+  size params["size"] || "400x225"
 
   data "Apples",     40
   data "Oranges",    50

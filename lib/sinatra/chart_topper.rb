@@ -11,12 +11,19 @@ module Sinatra
                     :pie, :side_stacked_bar, :side_bar, :spider, :stacked_area, :stacked_bar]
         
     GRAPH_TYPES.each do |method|
-      define_method(method) do |*args, &block|
-        title, options = *args
-        options ||= {}
-        camelized = method.to_s.split('_').map {|w| w.capitalize}.join
-        draw Gruff.const_get(camelized), title, options, &block
-      end      
+      # Ruby 1.8.6 doesn't seem to like this ???
+      # define_method(method) do |*args, &block|
+      #   title, options = *args
+      #   options ||= {}
+      #   camelized = method.to_s.split('_').map {|w| w.capitalize}.join
+      #   draw Gruff.const_get(camelized), title, options, &block
+      # end                                                      
+      camelized = method.to_s.split('_').map {|w| w.capitalize}.join      
+      class_eval <<-EVAL
+        def #{method.to_s}(title, options ={}, &block)
+          draw #{Gruff.const_get(camelized)}, title, options, &block
+        end
+      EVAL
     end
 
     # Delegate(?) these methods to the graph

@@ -22,7 +22,7 @@ Install the software (for more info see the Installation section) and run with:
 
     ruby mayapp.rb
     
-View your graph at [http://localhost/a\_graph\_of\_various\_fruit.png](http://localhost/a_graph_of_various_fruit.png)
+View your graph at [http://localhost:4567/a\_graph\_of\_various\_fruit.png](http://localhost:4567/a_graph_of_various_fruit.png)
 
 ## Installation
 
